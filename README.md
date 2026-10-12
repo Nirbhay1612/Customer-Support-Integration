@@ -8,25 +8,6 @@ The system is designed to answer knowledge-base questions with relevant context,
 
 ---
 
-## Contents
-
-- [Key Features](#key-features)
-- [Architecture](#architecture)
-- [How It Works](#how-it-works)
-- [Technology Stack](#technology-stack)
-- [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-- [Configure Environment Variables](#configure-environment-variables)
-- [Prepare the Knowledge Base](#prepare-the-knowledge-base)
-- [Seed Sample Data](#seed-sample-data)
-- [Run the Application](#run-the-application)
-- [Run Tests](#run-tests)
-- [Integrations](#integrations)
-- [Security Notes](#security-notes)
-- [Example Use Cases](#example-use-cases)
-- [Potential Improvements](#potential-improvements)
-- [Author](#author)
-- [License](#license)
 
 ## Key Features
 
@@ -115,21 +96,20 @@ The sample knowledge base is organized around FAQs, shipping, returns, refunds, 
 
 ## Technology Stack
 
-| Technology | Purpose |
+| Technology | Badge |
 |---|---|
-| Python | Core application language |
-| Streamlit | User interface |
-| Groq / LLM provider | Language-model response generation |
-| LangChain | AI/RAG orchestration where used |
-| Sentence Transformers | Text embeddings |
-| FAISS | Vector similarity search |
-| SQLAlchemy | Database layer |
-| SQLite / PostgreSQL | Data storage options |
-| Requests | External API communication |
-| pytest | Automated testing |
-| python-dotenv | Environment-variable loading |
-
-The exact dependencies and versions are defined in `requirements.txt`.
+| Python | [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/) |
+| Streamlit | [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/) |
+| Groq | [![Groq](https://img.shields.io/badge/Groq-F55036?style=for-the-badge&logo=groq&logoColor=white)](https://groq.com/) |
+| LangChain | [![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)](https://www.langchain.com/) |
+| Sentence Transformers | [![Sentence Transformers](https://img.shields.io/badge/Sentence--Transformers-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://sbert.net/) |
+| FAISS | [![FAISS](https://img.shields.io/badge/FAISS-Vector_Search-0467DF?style=for-the-badge)](https://github.com/facebookresearch/faiss) |
+| SQLAlchemy | [![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F00?style=for-the-badge&logo=sqlalchemy&logoColor=white)](https://www.sqlalchemy.org/) |
+| SQLite | [![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/) |
+| PostgreSQL | [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/) |
+| Requests | [![Requests](https://img.shields.io/badge/Requests-2CA5E0?style=for-the-badge)](https://requests.readthedocs.io/) |
+| pytest | [![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)](https://pytest.org/) |
+| python-dotenv | [![python-dotenv](https://img.shields.io/badge/python--dotenv-000000?style=for-the-badge)](https://github.com/theskumar/python-dotenv) |
 
 ## Project Structure
 
@@ -211,121 +191,7 @@ ai-customer-support-integration/
 
 > This tree reflects the intended project layout. If your local repository differs, update this section to match the actual files.
 
-## Getting Started
 
-### Prerequisites
-
-- Python installed (Python 3.12 was used during the reported test run)
-- Git
-- A terminal
-- A Groq API key or the LLM provider credentials used by your configuration
-- Credentials and base URLs for any external APIs you intend to enable
-
-### 1. Clone the repository
-
-Replace `YOUR_USERNAME` with your GitHub username and confirm the repository URL.
-
-```bash
-git clone https://github.com/YOUR_USERNAME/ai-customer-support-integration.git
-cd ai-customer-support-integration
-```
-
-### 2. Create a virtual environment
-
-**Windows PowerShell**
-
-```powershell
-python -m venv venv
-.\venv\Scripts\Activate.ps1
-```
-
-If PowerShell blocks activation, use your environment's approved activation method or activate the environment from your IDE.
-
-**macOS / Linux**
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-### 3. Install dependencies
-
-```bash
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-```
-
-### 4. Configure environment variables
-
-Copy the example environment file:
-
-**Windows PowerShell**
-
-```powershell
-Copy-Item .env.example .env
-```
-
-**macOS / Linux**
-
-```bash
-cp .env.example .env
-```
-
-Add the values required by `config/settings.py`. At minimum, the LLM integration may require:
-
-```env
-GROQ_API_KEY=replace_with_your_key
-```
-
-The exact names for database, SMTP, customer API, order API, ticket API, and webhook settings depend on the application's settings module and enabled integrations. Use `.env.example` as the source of truth; do not add credentials to source code.
-
-## Configure Environment Variables
-
-Review `config/settings.py` and `.env.example` to identify every required setting. Typical integration categories include:
-
-| Category | Example setting | Purpose |
-|---|---|---|
-| LLM | `GROQ_API_KEY` | Authenticates the LLM client |
-| Customer API | Project-specific base URL / API key | Retrieves customer data |
-| Order API | Project-specific base URL / API key | Retrieves order information |
-| Ticket API | Project-specific base URL / API key | Creates and updates tickets |
-| SMTP | Host, port, username, password | Sends support notifications |
-| Webhooks | `WEBHOOK_SECRET` | Verifies webhook signatures |
-| Database | Project-specific database URL | Configures persistence |
-
-These are configuration categories, not a guarantee that every variable uses the exact names shown. Confirm the required variable names in the code before running the app.
-
-## Prepare the Knowledge Base
-
-1. Add or edit support documents in `data/knowledge_base/`.
-2. Keep policy details accurate and up to date.
-3. Ingest the documents:
-
-```bash
-python scripts/ingest_documents.py
-```
-
-The ingestion script is intended to process the documents and create/update the vector store used by retrieval. Check its output and the configuration before relying on the index.
-
-## Seed Sample Data
-
-To load sample customer and order data, if supported by your current database configuration, run:
-
-```bash
-python scripts/seed_database.py
-```
-
-Use sample or synthetic records during development. Do not place real customer personal data in a public repository.
-
-## Run the Application
-
-Start the Streamlit app:
-
-```bash
-streamlit run app.py
-```
-
-Open the local URL printed in the terminal. The available features depend on your environment configuration and the integrations that are reachable.
 
 ## Run Tests
 
@@ -416,10 +282,7 @@ Possible future enhancements include:
 **Your Name**  
 AI / Automation Developer
 
-- GitHub: `https://github.com/YOUR_USERNAME`
-- LinkedIn: `https://linkedin.com/in/YOUR_USERNAME`
 
-Replace these placeholders with your real public profile URLs before publishing.
 
 ## License
 
