@@ -1,0 +1,87 @@
+
+# ==========================================
+# Environment variables and secrets
+# ==========================================
+.env
+.env.*
+!.env.example
+
+# ==========================================
+# Python cache and compiled files
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+pip-wheel-metadata/
+
+# ==========================================
+# Virtual environments
+# ==========================================
+.venv/
+venv/
+env/
+
+# ==========================================
+# Testing, coverage and type checking
+# ==========================================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+junit.xml
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+
+# ==========================================
+# Logs
+# ==========================================
+logs/*
+!logs/.gitkeep
+*.log
+
+# ==========================================
+# Generated vector stores
+# ==========================================
+data/vector_store/
+chroma_db/
+faiss_index/
+
+# ==========================================
+# Database files
+# ==========================================
+*.db
+*.sqlite
+*.sqlite3
+
+# ==========================================
+# Build and distribution artifacts
+# ==========================================
+build/
+dist/
+
+# ==========================================
+# IDE and operating system
+# ==========================================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ==========================================
+# Local environment and temporary files
+# ==========================================
+.envrc
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# ==========================================
+# Local secrets and credentials
+# ==========================================
+secrets/
+credentials.json
+service-account*.json

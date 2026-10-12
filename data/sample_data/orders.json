@@ -1,0 +1,112 @@
+[
+  {
+    "id": "CUST-10001",
+    "external_id": "EXT-CUST-10001",
+    "name": "Aarav Sharma",
+    "email": "aarav.sharma@example.com",
+    "phone": "+91-9000000001",
+    "status": "active",
+    "address": {
+      "line1": "12 MG Road",
+      "city": "Nagpur",
+      "state": "Maharashtra",
+      "postal_code": "440001",
+      "country": "India"
+    },
+    "preferences": {
+      "language": "en",
+      "email_notifications": true,
+      "sms_notifications": true
+    },
+    "created_at": "2026-01-10T10:30:00Z",
+    "updated_at": "2026-09-20T08:15:00Z"
+  },
+  {
+    "id": "CUST-10002",
+    "external_id": "EXT-CUST-10002",
+    "name": "Priya Verma",
+    "email": "priya.verma@example.com",
+    "phone": "+91-9000000002",
+    "status": "active",
+    "address": {
+      "line1": "45 FC Road",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "postal_code": "411004",
+      "country": "India"
+    },
+    "preferences": {
+      "language": "en",
+      "email_notifications": true,
+      "sms_notifications": false
+    },
+    "created_at": "2026-02-05T09:20:00Z",
+    "updated_at": "2026-09-18T11:45:00Z"
+  },
+  {
+    "id": "CUST-10003",
+    "external_id": "EXT-CUST-10003",
+    "name": "Rohan Patil",
+    "email": "rohan.patil@example.com",
+    "phone": "+91-9000000003",
+    "status": "active",
+    "address": {
+      "line1": "78 Station Road",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "postal_code": "400001",
+      "country": "India"
+    },
+    "preferences": {
+      "language": "en",
+      "email_notifications": true,
+      "sms_notifications": true
+    },
+    "created_at": "2026-03-12T14:10:00Z",
+    "updated_at": "2026-09-15T16:30:00Z"
+  },
+  {
+    "id": "CUST-10004",
+    "external_id": "EXT-CUST-10004",
+    "name": "Sneha Kulkarni",
+    "email": "sneha.kulkarni@example.com",
+    "phone": "+91-9000000004",
+    "status": "active",
+    "address": {
+      "line1": "23 College Road",
+      "city": "Nashik",
+      "state": "Maharashtra",
+      "postal_code": "422005",
+      "country": "India"
+    },
+    "preferences": {
+      "language": "en",
+      "email_notifications": false,
+      "sms_notifications": true
+    },
+    "created_at": "2026-04-01T08:45:00Z",
+    "updated_at": "2026-09-10T12:20:00Z"
+  },
+  {
+    "id": "CUST-10005",
+    "external_id": "EXT-CUST-10005",
+    "name": "Vikram Deshmukh",
+    "email": "vikram.deshmukh@example.com",
+    "phone": "+91-9000000005",
+    "status": "inactive",
+    "address": {
+      "line1": "56 Civil Lines",
+      "city": "Nagpur",
+      "state": "Maharashtra",
+      "postal_code": "440001",
+      "country": "India"
+    },
+    "preferences": {
+      "language": "en",
+      "email_notifications": false,
+      "sms_notifications": false
+    },
+    "created_at": "2026-01-22T13:25:00Z",
+    "updated_at": "2026-08-30T10:00:00Z"
+  }
+]
