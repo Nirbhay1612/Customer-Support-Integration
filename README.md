@@ -8,6 +8,9 @@ The system is designed to answer knowledge-base questions with relevant context,
 
 ---
 
+# Demo Link
+[![Live Demo](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://customer-support-integration-e46pvet7ku5rdizvf6nljv.streamlit.app/)
+
 
 ## Key Features
 
